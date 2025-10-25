@@ -1,0 +1,338 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+body {
+    background-color: #D2D2D2;
+    background-image:
+        repeating-linear-gradient(
+            to right, transparent 0 100px,
+            #25283b22 100px 101px
+        ),
+        repeating-linear-gradient(
+            to bottom, transparent 0 100px,
+            #25283b22 100px 101px
+        );
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    padding-top: 70px; /* Para no quedar debajo del navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.nav-actions-logged-in {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: #444;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #fff;
+}
+
+.icon-btn:hover {
+    background: #555;
+}
+
+.profile-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #25283B;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.profile-card {
+    padding: 30px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h2 {
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.profile-content {
+    display: flex;
+    gap: 50px;
+}
+
+.profile-info-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid #333;
+    padding-right: 50px;
+}
+
+.profile-info-right {
+    flex: 2;
+}
+
+.profile-picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid #ff6600;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-picture .edit-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.profile-picture:hover .edit-overlay {
+    opacity: 1;
+}
+
+.edit-overlay i {
+    font-size: 2em;
+    color: #fff;
+}
+
+.profile-info-left h3 {
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.user-bio {
+    font-size: 0.9em;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.edit-profile-btn {
+    background: #ff6600;
+    border: none;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.edit-profile-btn:hover {
+    background: #ff4500;
+}
+
+.profile-details, .profile-achievements {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.profile-details h4, .profile-achievements h4 {
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.info-group {
+    margin-bottom: 15px;
+}
+
+.info-group label {
+    display: block;
+    font-size: 0.8em;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.info-group p {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.achievement-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.achievement-item {
+    text-align: center;
+}
+
+.achievement-icon {
+    font-size: 2.5em;
+    color: #ff6600;
+    margin-bottom: 8px;
+}
+
+/* menus minis (notis y perfil) */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: -30px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  min-width: 220px;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.notif-menu {
+  max-height: 250px;      
+  overflow-y: auto;       
+}
+
+.notif-menu p {
+  padding: 12px 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 0.9em;
+  border-bottom: 1px solid #333;
+  transition: background 0.3s;
+  cursor: default;
+}
+
+.notif-menu p:hover {
+  background: #333;
+}
+
+
+.notif-menu::-webkit-scrollbar {
+  width: 8px;            
+}
+
+.notif-menu::-webkit-scrollbar-track {
+  background: #1a1a1a;     
+  border-radius: 10px;
+}
+
+.notif-menu::-webkit-scrollbar-thumb {
+  background: #ff6600;     
+  border-radius: 10px;
+}
+
+.notif-menu::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;     
+}
+
+
+.notif-menu {
+  scrollbar-width: thin;            
+  scrollbar-color: #ff6600 #1a1a1a; 
+}
+
+.profile-menu .profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.profile-menu .profile-mini img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ff6600;
+}
+
+.profile-menu .profile-mini strong {
+  font-size: 0.95em;
+  color: #fff;
+}
+
+.profile-menu .profile-mini p {
+  font-size: 0.8em;
+  color: #aaa;
+  margin: 0;
+}
+
+.profile-menu a {
+  display: block;
+  padding: 12px 15px;
+  color: #fff;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.profile-menu a:hover {
+  background: #333;
+}
+
+.profile-menu hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 5px 0;
+}
+
+.profile-menu a i {
+  margin-right: 8px;   
+  color: #ff6600;      
+  width: 18px;        
+  text-align: center;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .profile-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .profile-info-left {
+        border-right: none;
+        padding-right: 0;
+    }
+}

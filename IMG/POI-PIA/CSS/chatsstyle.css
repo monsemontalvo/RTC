@@ -1,0 +1,351 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+body {
+    background-color: #D2D2D2;
+    background-image:
+        repeating-linear-gradient(
+            to right, transparent 0 100px,
+            #25283b22 100px 101px
+        ),
+        repeating-linear-gradient(
+            to bottom, transparent 0 100px,
+            #25283b22 100px 101px
+        );
+    background-attachment: fixed;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px; /* Para no quedar debajo del navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.nav-actions-logged-in {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: #444;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #fff;
+}
+
+.icon-btn:hover {
+    background: #555;
+}
+
+.chat-container {
+    display: flex;
+    width: 95%;
+    max-width: 1600px;
+    height: 90vh;
+    background: #1e1e1e;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.sidebar {
+    padding: 20px;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.left-sidebar {
+    width: 250px;
+    border-right: 1px solid #333;
+}
+
+.right-sidebar {
+    width: 300px;
+    border-left: 1px solid #333;
+    background: #1a1a1a;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar-header i {
+    color: #888;
+}
+
+.sidebar-header input {
+    background: #2b2b2b;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.new-chat-btn button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #ff6600;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 20px;
+}
+
+.new-chat-btn button:hover {
+    background: #ff4500;
+}
+
+.chat-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 5px;
+}
+
+.chat-item:hover, .chat-item.active {
+    background: #2b2b2b;
+}
+
+.chat-item img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chat-info h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.chat-info p {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.main-chat {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.chat-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.chat-header-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.chat-header-right i {
+    color: #999;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.chat-header-right i:hover {
+    color: #ff6600;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.message.sent {
+    justify-content: flex-start;
+}
+
+.message.received {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message.received img {
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.message-bubble {
+    background: #2b2b2b;
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 60%;
+    position: relative;
+}
+
+.message.sent .message-bubble {
+    border-bottom-left-radius: 5px;
+}
+
+.message.received .message-bubble {
+    border-bottom-right-radius: 5px;
+    background: #ff6600;
+}
+
+.message-bubble p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.message-bubble span {
+    display: block;
+    text-align: right;
+    font-size: 0.7em;
+    color: #888;
+    margin-top: 5px;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 20px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    background: #2b2b2b;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 30px;
+}
+
+.chat-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 15px;
+}
+
+.chat-actions i {
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.chat-actions i:hover {
+    color: #ff6600;
+}
+
+.send-btn {
+    background: #ff6600;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.send-btn:hover {
+    background: #ff4500;
+}
+
+.right-sidebar .sidebar-header {
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.right-sidebar .sidebar-header h4 {
+    font-size: 1.2em;
+}
+
+.to-do-list, .shared-photos {
+    margin-bottom: 30px;
+}
+
+.to-do-list h4, .shared-photos h4 {
+    font-family: 'ICA Rubrik', sans-serif;
+    margin-bottom: 15px;
+}
+
+.to-do-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.to-do-list li {
+    background: #2b2b2b;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.photo-grid img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}

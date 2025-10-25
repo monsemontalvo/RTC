@@ -510,3 +510,97 @@ body {
   background: darkred;
 }
 
+/* chatsstyle.css - Agrega estos estilos básicos */
+
+.chat-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 70px auto 0;
+    height: calc(100vh - 70px);
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.left-sidebar {
+    width: 300px;
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+}
+
+.chat-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chat-item:hover, .chat-item.active {
+    background-color: #f0f0f0;
+}
+
+.main-chat {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages-area {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+#send-message-btn {
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Estilos de mensajes */
+.message {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    clear: both; /* Limpia floats */
+}
+
+.message.sent {
+    background-color: #dcf8c6; /* Color para mensajes enviados */
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.received {
+    background-color: #fff; /* Color para mensajes recibidos */
+    margin-right: auto;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.message .timestamp {
+    display: block;
+    font-size: 0.7em;
+    color: #888;
+    margin-top: 5px;
+}

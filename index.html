@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FIFA 2026</title>
   <link rel="stylesheet" href="CSS/indexstyle.css">
 </head>
+
 <body>
   <header class="navbar">
     <div class="logo">
       <a href="index.html">FIFA 2026</a>
     </div>
-    <nav>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <nav id="desktop-nav">
       <ul>
-        <li><a href="profile.html">Perfil</a></li>
+        <li><a href="profile.php">Perfil</a></li>
         <li><a href="tasks.html">Tareas</a></li>
-        <li><a href="chats.html">Chats</a></li>
+        <li><a href="chats.php">Chats</a></li>
         <li><a href="simulation.html">Simulación</a></li>
       </ul>
     </nav>
-    <div class="nav-actions">
+    <div class="nav-actions" id="desktop-actions">
       <a href="register.html" class="btn-link">Registrarte</a>
       <a href="login.html" class="btn-link">Iniciar Sesión</a>
     </div>
-  </header>
 
+    <div class="mobile-menu-content" id="mobile-menu">
+        <nav>
+            <ul>
+                <li><a href="profile.php">Perfil</a></li>
+                <li><a href="tasks.html">Tareas</a></li>
+                <li><a href="chats.php">Chats</a></li>
+                <li><a href="simulation.html">Simulación</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <a href="register.html" class="btn-link">Registrarte</a>
+            <a href="login.html" class="btn-link">Iniciar Sesión</a>
+        </div>
+    </div>
+</header>
+<script src="JAVASCRIPT/menu-hamburguesa.js"></script>
   <div class="banner">
     <div class="slider" style="--quantity: 10">
-      <div class="item" style="--position: 1"><img src="IMG/FIFA_CDMX.png" alt=""></div> 
+      <div class="item" style="--position: 1"><img src="IMG/FIFA_CDMX.png" alt=""></div>
       <div class="item" style="--position: 2"><img src="IMG/FIFA_MTY.png" alt=""></div>
       <div class="item" style="--position: 3"><img src="IMG/FIFA_GDL.png" alt=""></div>
       <div class="item" style="--position: 4"><img src="IMG/FIFA_LA.png" alt=""></div>
@@ -44,4 +68,5 @@
     </div>
   </div>
 </body>
+
 </html>

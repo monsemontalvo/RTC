@@ -207,3 +207,110 @@ body {
     font-size: 5em;
   }
 }
+
+/* indexstyle.css */
+
+/* --- Estilos del Botón de Hamburguesa (para Escritorio, Oculto) --- */
+/* indexstyle.css - Agrega/Reemplaza las reglas a partir de .menu-toggle */
+
+/* --- Estilos del Botón de Hamburguesa (Desktop - Oculto) --- */
+.menu-toggle {
+    display: none; /* <-- CORRECCIÓN: Oculto por defecto en escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* El nuevo contenedor móvil debe estar siempre oculto en escritorio */
+.mobile-menu-content {
+    display: none; 
+}
+
+
+/* --- MEDIA QUERY para Móviles (Menos de 768px) --- */
+@media screen and (max-width: 767px) {
+    
+    .navbar {
+        padding: 0 20px; /* Ajuste para móviles */
+    }
+    
+    /* 1. Ocultar navegación y acciones de ESCRITORIO */
+    #desktop-nav,
+    #desktop-actions {
+        display: none;
+    }
+    
+    /* 2. Mostrar el botón de hamburguesa */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* 3. Estilos del contenedor del menú MÓVIL (Por defecto, fuera de la vista) */
+    .mobile-menu-content {
+        display: flex; /* Lo hacemos flexible para apilar */
+        flex-direction: column;
+        position: fixed;
+        top: 70px; 
+        left: 0;
+        width: 100%;
+        height: auto; 
+        background: #25283B;
+        
+        transform: translateY(-100%); /* Ocultar fuera de la vista */
+        transition: transform 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    /* 4. Clase que JavaScript agregará para mostrar el menú */
+    .mobile-menu-content.open {
+        transform: translateY(0); 
+    }
+    
+    /* 5. Estilos de la navegación dentro del menú móvil */
+    .mobile-menu-content .mobile-nav ul {
+        display: flex; 
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0 10px 0;
+        gap: 10px; 
+        text-align: center;
+    }
+
+    /* 6. Estilos de las acciones (Login/Registro) dentro del menú móvil */
+    .mobile-menu-content .mobile-actions {
+        display: flex; 
+        flex-direction: column; 
+        width: 100%;
+        padding: 10px 20px 20px 20px;
+        gap: 10px;
+    }
+    
+    .mobile-menu-content .mobile-actions .btn-link {
+        width: 100%; /* Botones de ancho completo */
+        text-align: center;
+    }
+    
+    /* Animación del icono de hamburguesa a X */
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
